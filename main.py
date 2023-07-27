@@ -349,8 +349,6 @@ def holdem_game():
       player.addCard(deck.deal()) #find way to do deck.deal(2) 
       player.addCard(deck.deal())
     # display player cards
-    #player_index = table.players.find('user', True)
-    #player_object = table.players[player_index]
     for card in table.user.cards: 
       card.showing = True 
 
