@@ -304,7 +304,9 @@ def holdem_game():
         except Exception as e:
             print("There is an error: " + e) 
     print("The player count = " + str(1 + table.playerCount))
-
+    
+    table.createPlayers()
+    
     doneWithBlinds = False 
     while not doneWithBlinds: 
         print("What should the big blind be?")
@@ -339,6 +341,29 @@ def holdem_game():
 
     deck = StandardDeck() 
     deck.shuffle() 
+
+    #Game loop 
+
+    # for each player deal 2 cars
+    for player in table.players: 
+      player.addCard(deck.deal()) #find way to do deck.deal(2) 
+      player.addCard(deck.deal())
+    # display player cards
+    #player_index = table.players.find('user', True)
+    #player_object = table.players[player_index]
+    for card in table.user.cards: 
+      card.showing = True 
+
+    print(table.user.cards) 
+
+    #other players bet if first 
+
+    #bet calculation
+    # if bet to them is > big blind 
+    # show bet to them 
+    # are they big or small blind
+
+    # what does it cost to play
 
 
 
